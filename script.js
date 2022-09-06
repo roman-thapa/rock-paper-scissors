@@ -1,3 +1,4 @@
+alert("Please open DevTools of your browser")
 console.log("Welcome to Rock Paper Scissor Game");
 let inputFromUser;
 let computerChoice;
