@@ -3,53 +3,6 @@ let inputFromUser;
 let computerChoice;
 let win;
 
-function bestOfThreeWithNumber(){
-    let userWin=0;
-    let pcWin=0;
-    for(i=0; i<3; i++){
-        startGameWithNumber();
-        if(win==true){
-            userWin+=1;
-        }
-        else{
-            pcWin+=1;
-        }
-        if(userWin==2 || pcWin==2){
-            break;
-        }
-    }
-    if(userWin > pcWin){
-        console.log(`\n\tYou won by ` + userWin + " score");
-        alert(`You won by ` + userWin + " score");
-    }
-    else{
-        console.log(`\n\tYou lose by ` + pcWin + " score");
-        alert("You lose by " + pcWin + " score");
-    }
-}
-
-function bestOfFiveWithNumber(){
-    let userWin=0;
-    let pcWin=0;
-    for(i=0; i<5; i++){
-        startGameWithNumber();
-        if(win==true){
-            userWin+=1;
-        }
-        else{
-            pcWin+=1;
-        }
-    }
-    if(userWin > pcWin){
-        console.log(`\n\tYou won by ` + userWin + " score");
-        alert(`You won by ` + userWin + " score");
-    }
-    else{
-        console.log(`\n\tYou lose by ` + pcWin + " score");
-        alert(`You lose by ` + pcWin + " score");
-    }
-}
-
 function startGameWithNumber() {
     userInput();
     function userInput() {
@@ -130,11 +83,11 @@ function startGameWithNumber() {
     }
 }
 
-function bestOfThreeWithLetter(){
+function bestOfThreeWithNumber(){
     let userWin=0;
     let pcWin=0;
     for(i=0; i<3; i++){
-        startGameWithLetter();
+        startGameWithNumber();
         if(win==true){
             userWin+=1;
         }
@@ -155,11 +108,11 @@ function bestOfThreeWithLetter(){
     }
 }
 
-function bestOfFiveWithLetter(){
+function bestOfFiveWithNumber(){
     let userWin=0;
     let pcWin=0;
     for(i=0; i<5; i++){
-        startGameWithLetter();
+        startGameWithNumber();
         if(win==true){
             userWin+=1;
         }
@@ -176,6 +129,7 @@ function bestOfFiveWithLetter(){
         alert(`You lose by ` + pcWin + " score");
     }
 }
+
 
 function startGameWithLetter() {
     
@@ -262,3 +216,53 @@ function startGameWithLetter() {
         }
     }
 }
+
+
+
+function bestOfThreeWithLetter(){
+    let userWin=0;
+    let pcWin=0;
+    for(i=0; i<3; i++){
+        startGameWithLetter();
+        if(win==true){
+            userWin+=1;
+        }
+        else{
+            pcWin+=1;
+        }
+        if(userWin==2 || pcWin==2){
+            break;
+        }
+    }
+    if(userWin > pcWin){
+        console.log(`\n\tYou won by ` + userWin + " score");
+        alert(`You won by ` + userWin + " score");
+    }
+    else{
+        console.log(`\n\tYou lose by ` + pcWin + " score");
+        alert("You lose by " + pcWin + " score");
+    }
+}
+
+function bestOfFiveWithLetter(){
+    let userWin=0;
+    let pcWin=0;
+    for(i=0; i<5; i++){
+        startGameWithLetter();
+        if(win==true){
+            userWin+=1;
+        }
+        else{
+            pcWin+=1;
+        }
+    }
+    if(userWin > pcWin){
+        console.log(`\n\tYou won by ` + userWin + " score");
+        alert(`You won by ` + userWin + " score");
+    }
+    else{
+        console.log(`\n\tYou lose by ` + pcWin + " score");
+        alert(`You lose by ` + pcWin + " score");
+    }
+}
+
