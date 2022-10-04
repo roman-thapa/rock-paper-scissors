@@ -1,8 +1,100 @@
 /*alert("Please open DevTools of your browser")
 console.log("Welcome to Rock Paper Scissor Game");*/
-let inputFromUser;
+let userChoice;
 let computerChoice;
 let win;
+let userScore=0;
+let pcScore=0;
+
+const userResult = document.querySelector('.userScore');
+const pcResult = document.querySelector('.pcScore');
+
+function result(win){
+    if (win){
+        console.log(userResult);
+        userResult.innerText = userScore;
+    }
+    else{
+        console.log(pcResult);
+        pcResult.innerText = pcScore;
+    }
+}
+
+
+rock = document.querySelector('#rock');
+ rock.addEventListener('click', () => {
+    userChoice = "ROCK";
+    getComputerChoice();
+    getResult(userChoice, computerChoice)
+});
+
+paper = document.querySelector('#paper');
+ paper.addEventListener('click', () => {
+    userChoice = "PAPER";
+    getComputerChoice();
+    getResult(userChoice, computerChoice)
+});
+
+scissor = document.querySelector('#scissor');
+ scissor.addEventListener('click', () => {
+    userChoice = "SCISSOR";
+    getComputerChoice();
+    getResult(userChoice, computerChoice)
+});
+
+function getComputerChoice() {
+    computerChoice = Math.floor(Math.random()*(4-1)+1);
+    if(computerChoice===1){
+        computerChoice= "ROCK";
+    }
+    else if(computerChoice===2){
+        computerChoice= "PAPER";
+    }
+    else{
+        computerChoice= "SCISSOR";
+    }
+}
+
+function getResult(userChoice, pcChoice){
+    if(userChoice=="ROCK" && pcChoice=="SCISSOR") {
+        console.log("You win!");
+        win = true;
+        userScore++;
+        result(win);
+    }
+
+    else if(userChoice=="PAPER" && pcChoice=="ROCK") {
+        console.log("You WIN!");
+        win = true;
+        userScore++;
+        result(win);
+    }
+
+    else if(userChoice=="SCISSOR" && pcChoice=="PAPER"){
+        console.log("You win!");
+        win = true;
+        userScore++;
+        result(win);
+    }
+
+    else if (userChoice==pcChoice) {
+        console.log("It's a draw!\nTry again");
+        // userInput();
+        // getComputerChoice();
+        // getResult(userChoice, computerChoice);
+    }
+
+    else{
+        console.log("You lose!");
+        win = false;
+        pcScore++;
+        result(win);
+    }
+}
+
+
+
+
 
 /*function startGameWithNumber() {
     userInput();

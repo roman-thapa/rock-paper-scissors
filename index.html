@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissor Game</title>
-        <script src="script.js"></script>
+        <!-- <script src="script.js" defer></script> -->
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -14,7 +14,7 @@
                 <p class="title">
                     <h1>Welcome to Rock Paper Scissor Game</h1>
                 </p>
-                <div class="score">
+                <div class="score spaceBetween">
                     <div class="userScore">
 
                     </div>
@@ -26,15 +26,21 @@
                     </div>
 
                 </div>
-                <div class="action">
-                    <div class="rock">
-
+                <div class="action spaceBetween">
+                    <div class="divRock">
+                        <button id="rock">
+                            Rock
+                        </button>
                     </div>
-                    <div class="paper">
-
+                    <div class="divPaper">
+                        <button id="paper">
+                            Paper
+                        </button>
                     </div>
-                    <div class="scissor">
-                        
+                    <div class="divScissor">
+                        <button id="scissor">
+                            Scissor
+                        </button>
                     </div>
                 </div>
             </div>
@@ -69,7 +75,7 @@
             </button>
         </p>-->
 
-
+        <script src="script.js" defer></script>
     </body>
 
 </html>
