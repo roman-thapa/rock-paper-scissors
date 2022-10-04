@@ -1,10 +1,10 @@
-alert("Please open DevTools of your browser")
-console.log("Welcome to Rock Paper Scissor Game");
+/*alert("Please open DevTools of your browser")
+console.log("Welcome to Rock Paper Scissor Game");*/
 let inputFromUser;
 let computerChoice;
 let win;
 
-function startGameWithNumber() {
+/*function startGameWithNumber() {
     userInput();
     function userInput() {
         inputFromUser = prompt("Please select", "1=rock, 2=paper, 3=scissor");
@@ -267,3 +267,4 @@ function bestOfFiveWithLetter(){
     }
 }
 
+*/
