@@ -1,5 +1,3 @@
-/*alert("Please open DevTools of your browser")
-console.log("Welcome to Rock Paper Scissor Game");*/
 let userChoice;
 let computerChoice;
 let win;
@@ -8,38 +6,29 @@ let pcScore=0;
 
 const userResult = document.querySelector('.userScore');
 const pcResult = document.querySelector('.pcScore');
-
-function result(win){
-    if (win){
-        console.log(userResult);
-        userResult.innerText = userScore;
-    }
-    else{
-        console.log(pcResult);
-        pcResult.innerText = pcScore;
-    }
-}
+const outcome = document.querySelector('.match');
+const resultInText = document.querySelector('.result');
 
 
 rock = document.querySelector('#rock');
  rock.addEventListener('click', () => {
     userChoice = "ROCK";
     getComputerChoice();
-    getResult(userChoice, computerChoice)
+    getResult(userChoice, computerChoice);
 });
 
 paper = document.querySelector('#paper');
  paper.addEventListener('click', () => {
     userChoice = "PAPER";
     getComputerChoice();
-    getResult(userChoice, computerChoice)
+    getResult(userChoice, computerChoice);
 });
 
 scissor = document.querySelector('#scissor');
  scissor.addEventListener('click', () => {
     userChoice = "SCISSOR";
     getComputerChoice();
-    getResult(userChoice, computerChoice)
+    getResult(userChoice, computerChoice);
 });
 
 function getComputerChoice() {
@@ -55,33 +44,31 @@ function getComputerChoice() {
     }
 }
 
-function getResult(userChoice, pcChoice){
-    if(userChoice=="ROCK" && pcChoice=="SCISSOR") {
+function getResult(userChoice, computerChoice){
+    if(userChoice=="ROCK" && computerChoice=="SCISSOR") {
         console.log("You win!");
         win = true;
         userScore++;
         result(win);
     }
 
-    else if(userChoice=="PAPER" && pcChoice=="ROCK") {
+    else if(userChoice=="PAPER" && computerChoice=="ROCK") {
         console.log("You WIN!");
         win = true;
         userScore++;
         result(win);
     }
 
-    else if(userChoice=="SCISSOR" && pcChoice=="PAPER"){
+    else if(userChoice=="SCISSOR" && computerChoice=="PAPER"){
         console.log("You win!");
         win = true;
         userScore++;
         result(win);
     }
 
-    else if (userChoice==pcChoice) {
+    else if (userChoice==computerChoice) {
         console.log("It's a draw!\nTry again");
-        // userInput();
-        // getComputerChoice();
-        // getResult(userChoice, computerChoice);
+        condition(userChoice , computerChoice);
     }
 
     else{
@@ -90,6 +77,34 @@ function getResult(userChoice, pcChoice){
         pcScore++;
         result(win);
     }
+}
+
+function result(win){
+    if (win){
+        userResult.innerText = userScore;
+        condition(userChoice , computerChoice, win);
+    }
+    else{
+        pcResult.innerText = pcScore;
+        condition(userChoice , computerChoice, win);
+    }
+}
+
+
+function condition(choice1, choice2){
+    if (choice1 === choice2){
+        outcome.innerText = `${choice1} and ${choice2} is same`;
+        resultInText.innerText = "Draw";
+    }
+    else if (win){
+        outcome.innerText = `${choice1} beat ${choice2}`;
+        resultInText.innerText = "WIN";
+    }
+    else{
+        outcome.innerText = `${choice2} beat ${choice1}`;
+        resultInText.innerText = "LOSE";
+    }
+
 }
 
 
