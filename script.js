@@ -146,6 +146,10 @@ function createButton(){
         userScore = 0;
         pcScore = 0;
         updateScore();
-        //location.reload();
+        outcome.innerText ='';
+        resultInText.innerText ='';
+        showUserChoice.innerText ='';
+        showPcChoice.innerHTML ='';
+        finalOutcome.innerText ='First to score 5 will win';
     } )
 }
