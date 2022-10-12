@@ -11,11 +11,15 @@ const resultInText = document.querySelector('.result');
 const finalOutcome = document.querySelector('.outcome');
 const showUserChoice = document.querySelector('.userChoice');
 const showPcChoice = document.querySelector('.pcChoice');
-const button = document.querySelector('.action')
+const button = document.querySelector('.action');
+const choiceButton = document.querySelector('.button');
 
-userResult.innerText = userScore;
-pcResult.innerText = pcScore;
+updateScore();
 
+function updateScore(){
+    userResult.innerText = userScore;
+    pcResult.innerText = pcScore;
+}
 
 rock = document.querySelector('#rock');
  rock.addEventListener('click', () => {
@@ -83,11 +87,11 @@ function getResult(){
 
 function result(){
     if (win){
-        userResult.innerText = userScore;
+        updateScore();
         condition();
     }
     else{
-        pcResult.innerText = pcScore;
+        updateScore();
         condition();
     }
 
@@ -133,11 +137,19 @@ function conclude(){
 }
 
 function createButton(){
-    let newButton = document.createElement('button');
+    let restartButton = document.createElement('button');
     let text = document.createTextNode("Restart");
-    newButton.appendChild(text);
-    button.replaceWith(newButton);
-    newButton.addEventListener('click',() =>{
-        location.reload();
+    restartButton.appendChild(text);
+    button.replaceChild(restartButton, choiceButton);
+    restartButton.addEventListener('click',() =>{
+        button.replaceChild(choiceButton, restartButton);
+        userScore = 0;
+        pcScore = 0;
+        updateScore();
+        outcome.innerText ='';
+        resultInText.innerText ='';
+        showUserChoice.innerText ='';
+        showPcChoice.innerHTML ='';
+        finalOutcome.innerText ='First to score 5 will win';
     } )
 }
